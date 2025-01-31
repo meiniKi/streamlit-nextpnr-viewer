@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "edacation": "^0.3.9",
     "nextpnr-viewer": "^0.7.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

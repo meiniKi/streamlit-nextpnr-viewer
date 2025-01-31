@@ -5,15 +5,16 @@ from nextpnr_viewer import nextpnr_viewer
 # During development, we can run this just as we would any other Streamlit
 # app: `$ streamlit run nextpnr_viewer/example.py`
 
-st.subheader("Component with constant args")
+#st.subheader("Component with constant args")
 
 # Create an instance of our component with a constant `name` arg, and
 # print its output value.
-num_clicks = nextpnr_viewer("World")
-st.markdown("You've clicked %s times!" % int(num_clicks))
+with st.spinner("Wait for view to be loaded"):
+    num_clicks = nextpnr_viewer("World")
+#st.markdown("You've clicked %s times!" % int(num_clicks))
 
-st.markdown("---")
-st.subheader("Component with variable args")
+#st.markdown("---")
+#st.subheader("Component with variable args")
 
 # Create a second instance of our component whose `name` arg will vary
 # based on a text_input widget.
@@ -23,6 +24,6 @@ st.subheader("Component with variable args")
 # it is considered a new instance and will be re-mounted on the frontend
 # and lose its current state. In this case, we want to vary the component's
 # "name" argument without having it get recreated.
-name_input = st.text_input("Enter a name", value="Streamlit")
-num_clicks = nextpnr_viewer(name_input, key="foo")
-st.markdown("You've clicked %s times!" % int(num_clicks))
+#name_input = st.text_input("Enter a name", value="Streamlit")
+#num_clicks = nextpnr_viewer(name_input, key="foo")
+#st.markdown("You've clicked %s times!" % int(num_clicks))
