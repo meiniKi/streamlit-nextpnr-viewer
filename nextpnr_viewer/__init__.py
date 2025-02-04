@@ -43,14 +43,17 @@ else:
 # `declare_component` and call it done. The wrapper allows us to customize
 # our component's API: we can pre-process its input args, post-process its
 # output value, and add a docstring for users.
-def nextpnr_viewer(name, key=None):
+def nextpnr_viewer(family="ecp5", device="25k", json_path:str="", key=None):
     """Create a new instance of "nextpnr_viewer".
 
     Parameters
     ----------
-    name: str
-        The name of the thing we're saying hello to. The component will display
-        the text "Hello, {name}!"
+    family: str
+        FPGA family, e.g., ecp5.
+    device: str
+        FPGA device, e.g., 85k
+    json_path: str
+        Path to routed implementation json, or empty string
     key: str or None
         An optional key that uniquely identifies this component. If this is
         None, and the component's arguments are changed, the component will
@@ -70,7 +73,13 @@ def nextpnr_viewer(name, key=None):
     #
     # "default" is a special argument that specifies the initial return
     # value of the component before the user has interacted with it.
-    component_value = _component_func(name=name, key=key, default=0)
+    component_value = _component_func(
+        family=family,
+        device=device,
+        json_path=json_path,
+        key=key,
+        default=0
+    )
 
     # We could modify the value returned from the component if we wanted.
     # There's no need to do this in our simple example - but it's an option.

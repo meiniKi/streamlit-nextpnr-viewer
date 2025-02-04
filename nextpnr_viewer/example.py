@@ -1,5 +1,6 @@
 import streamlit as st
 from nextpnr_viewer import nextpnr_viewer
+import json
 
 # Add some test code to play with the component while it's in development.
 # During development, we can run this just as we would any other Streamlit
@@ -9,8 +10,15 @@ from nextpnr_viewer import nextpnr_viewer
 
 # Create an instance of our component with a constant `name` arg, and
 # print its output value.
-with st.spinner("Wait for view to be loaded"):
-    num_clicks = nextpnr_viewer("World")
+s = ""
+with open("/home/meinhard/Documents/repos/streamlit-nextpnr-viewer/nextpnr_viewer/routed.json", "r") as f:
+    s = f.read()
+
+nextpnr_viewer(
+    "ecp5",
+    "85k",
+    s
+)
 #st.markdown("You've clicked %s times!" % int(num_clicks))
 
 #st.markdown("---")
