@@ -1,11 +1,11 @@
-# streamlit-custom-component
+# streamlit-nextpnr-viewer
 
-Streamlit component that allows you to do X
+Streamlit component that allows you to do intergrate [nextpnr-viewer](https://github.com/EDAcation/nextpnr-viewer) into a streamlit app.
 
 ## Installation instructions
 
 ```sh
-pip install streamlit-custom-component
+pip install streamlit-nextpnr-viewer
 ```
 
 ## Usage instructions
