@@ -5,7 +5,7 @@ import streamlit.components.v1 as components
 # the component, and True when we're ready to package and distribute it.
 # (This is, of course, optional - there are innumerable ways to manage your
 # release process.)
-_RELEASE = False
+_RELEASE = True
 
 # Declare a Streamlit component. `declare_component` returns a function
 # that is used to create instances of the component. We're naming this
@@ -43,7 +43,13 @@ else:
 # `declare_component` and call it done. The wrapper allows us to customize
 # our component's API: we can pre-process its input args, post-process its
 # output value, and add a docstring for users.
-def nextpnr_viewer(family="ecp5", device="25k", json_path:str="", key=None):
+def nextpnr_viewer(
+        family = "ecp5",
+        device = "25k",
+        width: int = 1024,
+        height: int = 512,
+        routed_json: str = "",
+        key=None):
     """Create a new instance of "nextpnr_viewer".
 
     Parameters
@@ -52,7 +58,11 @@ def nextpnr_viewer(family="ecp5", device="25k", json_path:str="", key=None):
         FPGA family, e.g., ecp5.
     device: str
         FPGA device, e.g., 85k
-    json_path: str
+    width: int
+        width of nextpnr-viewer
+    height: int
+        height of nextpnr-viewer
+    routed_json: str
         Path to routed implementation json, or empty string
     key: str or None
         An optional key that uniquely identifies this component. If this is
@@ -76,7 +86,9 @@ def nextpnr_viewer(family="ecp5", device="25k", json_path:str="", key=None):
     component_value = _component_func(
         family=family,
         device=device,
-        json_path=json_path,
+        width=width,
+        height=height,
+        routed_json=routed_json,
         key=key,
         default=0
     )

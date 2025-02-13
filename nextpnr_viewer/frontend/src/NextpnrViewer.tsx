@@ -35,7 +35,7 @@ document.head.appendChild(styleSheet);
  * Streamlit library. Your custom args can be accessed via the `args` props.
  */
 function NextpnrViewer({ args, disabled, theme }: ComponentProps): ReactElement {
-  const { family, device, json_path } = args
+  const { family, device, width, height, routed_json } = args
 
   const [isFocused, setIsFocused] = useState(false)
 
@@ -69,8 +69,8 @@ function NextpnrViewer({ args, disabled, theme }: ComponentProps): ReactElement 
   }
 
   const nextpnrViewer = new NextPNRViewer(safeContainer, {
-    width: 1024,
-    height: 512,
+    width: width,
+    height: height,
     chip: {
         family: family,
         device: device
@@ -80,8 +80,8 @@ function NextpnrViewer({ args, disabled, theme }: ComponentProps): ReactElement 
 
   nextpnrViewer.render();
 
-  if (json_path != "") {
-    nextpnrViewer.showJson(JSON.parse(json_path));
+  if (routed_json != "") {
+    nextpnrViewer.showJson(JSON.parse(routed_json));
   }
 
   // TODO: fix spinner
