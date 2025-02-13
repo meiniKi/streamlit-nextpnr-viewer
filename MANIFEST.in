@@ -1,0 +1,1 @@
+recursive-include nextpnr_viewer/frontend/build *
