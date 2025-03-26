@@ -9,8 +9,8 @@ setuptools.setup(
     name="streamlit-nextpnr-viewer",
     version="0.0.1",
     author="Meinhard Kissich",
-    author_email="mail@example.com",
-    description="Streamlit component that allows you to do X",
+    author_email="dev@meinhard-kissich.at",
+    description="Streamlit component to embed the nextpnr-viewer.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="",
@@ -30,5 +30,5 @@ setuptools.setup(
             "pytest-playwright-snapshot==1.0",
             "pytest-rerunfailures==12.0",
         ]
-    }
+    },
 )
