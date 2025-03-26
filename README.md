@@ -1,6 +1,6 @@
 # streamlit-nextpnr-viewer
 
-Streamlit component to embed [nextpnr-viewer](https://github.com/EDAcation/nextpnr-viewer) into your streamlit app. It can render just the FPGA architecture or overlay the implemented (placed and routed) design.
+Streamlit component to embed [nextpnr-viewer](https://github.com/EDAcation/nextpnr-viewer) into a streamlit app. It can be used to render a logical representation of the target FPGA architecture or overlay the implemented (placed and routed) design.
 
 ![preview](./doc/preview.gif)
 
